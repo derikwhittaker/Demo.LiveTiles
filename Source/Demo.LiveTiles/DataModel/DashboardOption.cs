@@ -16,7 +16,6 @@ namespace Demo.LiveTiles.DataModel
     public class LiveTileOption
     {
         public string Name { get; set; }
-
         
         public string ImagePath { get; set; }
 
