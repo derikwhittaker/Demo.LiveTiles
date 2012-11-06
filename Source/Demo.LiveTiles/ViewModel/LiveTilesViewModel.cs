@@ -11,25 +11,42 @@ namespace Demo.LiveTiles.ViewModel
 {
     public class LiveTilesViewModel : ViewModelBase
     {
-        private ObservableCollection<LiveTileOption> _liveTileOptions = new ObservableCollection<LiveTileOption>();
+        private ObservableCollection<LiveTileGroup> _liveTileOptions = new ObservableCollection<LiveTileGroup>();
+        private LiveTileOption _selectedLiveTileOption;
 
         public LiveTilesViewModel()
         {
-            LiveTileOptions = new ObservableCollection<LiveTileOption>(new List<LiveTileOption>
-                                                                             {
-                                                                                 new LiveTileOption{Name = "Live Tiles", 
-                                                                                     ImagePath = @"../Images/LiveTileBackground.png"},
-                                                                                 new LiveTileOption{Name = "Secondary Tiles",
-                                                                                     ImagePath = @"../Images/LiveTileBackground.png",},
-                                                                                 new LiveTileOption{Name = "Tile Notifications",
-                                                                                     ImagePath = @"../Images/LiveTileBackground.png"},
-                                                                                 new LiveTileOption{Name = "Toast Notifications", 
-                                                                                     ImagePath = @"../Images/LiveTileBackground.png"},
-                                                                             });
+            var groups = new List<LiveTileGroup>();
+
+            groups.Add(new LiveTileGroup
+                           {
+                               Name = "Square Tiles",
+                               Items = new List<LiveTileOption>
+                                           {
+                                                                new LiveTileOption{Name = "Square Block", ImagePath = @"../Images/Tiles/TileSquareBlock.png"},
+                                                                new LiveTileOption{Name = "Square Text", ImagePath = @"../Images/Tiles/TileSquareText.png"},
+                                                                new LiveTileOption{Name = "Square Image Only",ImagePath = @"../Images/Tiles/TileSquareImageOnly.png",},
+                                                                new LiveTileOption{Name = "Square Peek", ImagePath = @"../Images/Tiles/TileSquareImagePeek.png"},
+                                           }
+                           });
+
+            groups.Add(new LiveTileGroup
+                            {
+                                Name = "Wide Tiles",
+                                Items = new List<LiveTileOption>
+                                                           {
+                                                                new LiveTileOption{Name = "Wide w/ Text", ImagePath = @"../Images/Tiles/TileWideText01.png"},
+                                                                new LiveTileOption{Name = "Wide w/ Image", ImagePath = @"../Images/Tiles/TileWideImage.png"},
+                                                                new LiveTileOption{Name = "Wide w/ Image/Text", ImagePath = @"../Images/Tiles/TileWideImageAndText.png"},
+                                                                new LiveTileOption{Name = "Wide w/ Collection", ImagePath = @"../Images/Tiles/TileWideImageCollection.png"},
+                                                           }
+                            });
+
+            LiveTileOptions = new ObservableCollection<LiveTileGroup>(groups);
 
         }
 
-        public ObservableCollection<LiveTileOption> LiveTileOptions
+        public ObservableCollection<LiveTileGroup> LiveTileOptions
         {
             get { return _liveTileOptions; }
             set
@@ -37,6 +54,17 @@ namespace Demo.LiveTiles.ViewModel
                 _liveTileOptions = value;
 
                 RaisePropertyChanged(() => LiveTileOptions);
+            }
+        }
+
+        public LiveTileOption SelectedLiveTileOption
+        {
+            get { return _selectedLiveTileOption; }
+            set
+            {
+                _selectedLiveTileOption = value;
+
+                RaisePropertyChanged(() => SelectedLiveTileOption);
             }
         }
     }

@@ -12,12 +12,4 @@ namespace Demo.LiveTiles.DataModel
 
         public Type PageType { get; set; }
     }
-
-    public class LiveTileOption
-    {
-        public string Name { get; set; }
-        
-        public string ImagePath { get; set; }
-
-    }
 }

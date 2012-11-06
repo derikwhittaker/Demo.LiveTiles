@@ -104,6 +104,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModel\DashboardOption.cs" />
+    <Compile Include="DataModel\LiveTileOption.cs" />
     <Compile Include="ViewModel\LiveTilesViewModel.cs" />
     <Compile Include="Views\DashbaordPage.xaml.cs">
       <DependentUpon>DashbaordPage.xaml</DependentUpon>
@@ -118,6 +119,9 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="ViewModel\DashboardViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\GroupedItemsPage1.xaml.cs">
+      <DependentUpon>GroupedItemsPage1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LiveTilesPage.xaml.cs">
       <DependentUpon>LiveTilesPage.xaml</DependentUpon>
     </Compile>
@@ -170,6 +174,10 @@
     <Page Include="Views\DashbaordPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GroupedItemsPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LiveTilesPage.xaml">
       <SubType>Designer</SubType>
