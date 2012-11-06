@@ -105,7 +105,9 @@
     </Compile>
     <Compile Include="DataModel\DashboardOption.cs" />
     <Compile Include="DataModel\LiveTileOption.cs" />
+    <Compile Include="DataModel\SecondaryTileOption.cs" />
     <Compile Include="ViewModel\LiveTilesViewModel.cs" />
+    <Compile Include="ViewModel\SecondaryTilesViewModel.cs" />
     <Compile Include="Views\DashbaordPage.xaml.cs">
       <DependentUpon>DashbaordPage.xaml</DependentUpon>
     </Compile>

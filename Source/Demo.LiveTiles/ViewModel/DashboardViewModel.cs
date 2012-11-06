@@ -18,15 +18,6 @@ namespace Demo.LiveTiles.ViewModel
         /// </summary>
         public DashboardViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
-            
             DashboardOptions = new ObservableCollection<DashboardOption>(new List<DashboardOption>
                                                                              {
                                                                                  new DashboardOption{Name = "Live Tiles", Description = "Learn how to setup your application for Live Tile", 

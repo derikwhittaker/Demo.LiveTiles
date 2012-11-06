@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Demo.LiveTiles.DataModel;
-using Demo.LiveTiles.Views;
 using GalaSoft.MvvmLight;
 using NotificationsExtensions.TileContent;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Notifications;
-using Windows.UI.Xaml.Controls;
 
 
 namespace Demo.LiveTiles.ViewModel

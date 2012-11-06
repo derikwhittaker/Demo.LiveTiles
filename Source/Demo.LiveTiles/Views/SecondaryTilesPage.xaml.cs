@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Demo.LiveTiles.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,6 +25,8 @@ namespace Demo.LiveTiles.Views
         public SecondaryTilesPage()
         {
             this.InitializeComponent();
+
+            DataContext = new SecondaryTilesViewModel();
         }
 
         /// <summary>
