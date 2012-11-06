@@ -151,6 +151,18 @@
     <Content Include="Assets\LightGray.png" />
     <Content Include="Assets\MediumGray.png" />
     <Content Include="Assets\DarkGray.png" />
+    <Content Include="Images\Cars\AstonMartin_V12Zagato.png" />
+    <Content Include="Images\Cars\Audi_R8.png" />
+    <Content Include="Images\Cars\Bugatti_Veyron.png" />
+    <Content Include="Images\Cars\Bugatti_Veyron_150.png" />
+    <Content Include="Images\Cars\Corvette_Z06.png" />
+    <Content Include="Images\Cars\Ferrari_F12berlinetta.png" />
+    <Content Include="Images\Cars\Jaguar_xj.png" />
+    <Content Include="Images\Cars\Lamborghini_Aventador.png" />
+    <Content Include="Images\Cars\Lotus_ExigeS.png" />
+    <Content Include="Images\Cars\Maybach_57.png" />
+    <Content Include="Images\Cars\McLaren_MP4.png" />
+    <Content Include="Images\Cars\Porsche_Panamera.png" />
     <Content Include="Images\LiveTileBackground.png" />
     <Content Include="Images\Tiles\TileSquareBlock.png" />
     <Content Include="Images\Tiles\TileSquareImageOnly.png" />
@@ -205,6 +217,9 @@
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\MvvmLight.4.1.23.0\lib\winrt45\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="NotificationsExtensions">
+      <HintPath>..\Libraries\TileNotifcationExtensions\NotificationsExtensions.winmd</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup />

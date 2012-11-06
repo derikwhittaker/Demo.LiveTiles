@@ -9,6 +9,8 @@ namespace Demo.LiveTiles.DataModel
         
         public string ImagePath { get; set; }
 
+        public LiveTileType LiveTileType { get; set; }
+
     }
 
     public class LiveTileGroup
@@ -16,6 +18,19 @@ namespace Demo.LiveTiles.DataModel
         public string Name { get; set; }
 
         public List<LiveTileOption> Items { get; set; }
+    }
+
+    public enum LiveTileType
+    {
+        Unknown,
+        SquareBlock,
+        SquareImageOnly,
+        SquareImagePeek,
+        SquareText,
+        WideImage,
+        WideImageAndText,
+        WideImageCollection,
+        WideText
     }
 
 }
