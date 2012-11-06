@@ -144,6 +144,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ApplictionWideTile_310x150.png" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
@@ -151,7 +152,10 @@
     <Content Include="Assets\LightGray.png" />
     <Content Include="Assets\MediumGray.png" />
     <Content Include="Assets\DarkGray.png" />
+    <Content Include="Images\BlueSmallSquare.png" />
+    <Content Include="Images\BrownSmallSquare.png" />
     <Content Include="Images\Cars\AstonMartin_V12Zagato.png" />
+    <Content Include="Images\Cars\AstonMartin_V12Zagato_310x150.png" />
     <Content Include="Images\Cars\Audi_R8.png" />
     <Content Include="Images\Cars\Bugatti_Veyron.png" />
     <Content Include="Images\Cars\Bugatti_Veyron_150.png" />
@@ -163,7 +167,9 @@
     <Content Include="Images\Cars\Maybach_57.png" />
     <Content Include="Images\Cars\McLaren_MP4.png" />
     <Content Include="Images\Cars\Porsche_Panamera.png" />
+    <Content Include="Images\GreenSmallSquare.png" />
     <Content Include="Images\LiveTileBackground.png" />
+    <Content Include="Images\RedSmallSquare.png" />
     <Content Include="Images\Tiles\TileSquareBlock.png" />
     <Content Include="Images\Tiles\TileSquareImageOnly.png" />
     <Content Include="Images\Tiles\TileSquareImagePeek.png" />
