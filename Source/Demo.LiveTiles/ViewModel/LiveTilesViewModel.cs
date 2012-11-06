@@ -13,6 +13,22 @@ namespace Demo.LiveTiles.ViewModel
     {
         private ObservableCollection<LiveTileOption> _liveTileOptions = new ObservableCollection<LiveTileOption>();
 
+        public LiveTilesViewModel()
+        {
+            LiveTileOptions = new ObservableCollection<LiveTileOption>(new List<LiveTileOption>
+                                                                             {
+                                                                                 new LiveTileOption{Name = "Live Tiles", 
+                                                                                     ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                 new LiveTileOption{Name = "Secondary Tiles",
+                                                                                     ImagePath = @"../Images/LiveTileBackground.png",},
+                                                                                 new LiveTileOption{Name = "Tile Notifications",
+                                                                                     ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                 new LiveTileOption{Name = "Toast Notifications", 
+                                                                                     ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                             });
+
+        }
+
         public ObservableCollection<LiveTileOption> LiveTileOptions
         {
             get { return _liveTileOptions; }

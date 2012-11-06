@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demo.LiveTiles.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,8 @@ namespace Demo.LiveTiles.Views
         public LiveTilesPage()
         {
             this.InitializeComponent();
+
+            DataContext = new LiveTilesViewModel();
         }
 
         /// <summary>
