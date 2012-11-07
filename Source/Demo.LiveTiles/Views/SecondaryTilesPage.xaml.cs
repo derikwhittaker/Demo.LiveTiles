@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Demo.LiveTiles.Common;
 using Demo.LiveTiles.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -40,6 +41,10 @@ namespace Demo.LiveTiles.Views
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
+            var viewModel = ((SecondaryTilesViewModel) DataContext);
+            var args = navigationParameter as string[];
+
+            viewModel.SetPinArguents(args);
         }
 
         /// <summary>

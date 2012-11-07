@@ -14,6 +14,7 @@ namespace Demo.LiveTiles.DataModel
     {
         Unknown,
         Simple,
-        WithParameters
+        WithParameters,
+        Unpin
     }
 }

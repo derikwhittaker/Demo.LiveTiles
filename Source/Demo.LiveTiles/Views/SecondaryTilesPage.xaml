@@ -11,6 +11,8 @@
     mc:Ignorable="d">
 
     <Page.Resources>
+        
+        <common:BooleanToVisibilityConverter x:Key="b2v" />
 
         <DataTemplate x:Key="SecondaryTiles250x250ItemTemplate">
             <Grid HorizontalAlignment="Left" Width="250" Height="500">
@@ -52,21 +54,45 @@
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Learn About Secondary Tiles" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
 
-        <GridView
-            x:Name="itemGridView"
-            AutomationProperties.AutomationId="ItemsGridView"
-            AutomationProperties.Name="Items"
-            TabIndex="1"
-            Grid.Row="1"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            
-            ItemsSource="{Binding SecondaryTileOptions}"
-            SelectedItem="{Binding SelectedSecondaryTileOption, Mode=TwoWay}"
-            ItemTemplate="{StaticResource SecondaryTiles250x250ItemTemplate}"
-            SelectionMode="Single"
-            IsSwipeEnabled="false"
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <GridView
+                x:Name="itemGridView"
+                AutomationProperties.AutomationId="ItemsGridView"
+                AutomationProperties.Name="Items"
+                TabIndex="1"
+                Grid.Column="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                ItemsSource="{Binding SecondaryTileOptions}"
+                SelectedItem="{Binding SelectedSecondaryTileOption, Mode=TwoWay}"
+                ItemTemplate="{StaticResource SecondaryTiles250x250ItemTemplate}"
+                SelectionMode="Single"
+                IsSwipeEnabled="false"
             />
 
+            <Grid Grid.Column="1" Margin="10,75" Visibility="{Binding ShowPageArguments, Converter={StaticResource b2v}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Tile Arguments" Style="{StaticResource SubheaderTextStyle}" Margin="0,0,0,10" />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Argument 1 Value" Style="{StaticResource SubtitleTextStyle}" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Arg1}"  Style="{StaticResource SubtitleTextStyle}" Margin="10,0"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Argument 2 Value"  Style="{StaticResource SubtitleTextStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Arg2}"  Style="{StaticResource SubtitleTextStyle}"  Margin="10,0"/>
+            </Grid>
+        </Grid>
     </Grid>
 </common:LayoutAwarePage>

@@ -1,4 +1,5 @@
-﻿using Demo.LiveTiles.Common;
+﻿using System.Linq;
+using Demo.LiveTiles.Common;
 
 using System;
 using Demo.LiveTiles.Views;
@@ -34,35 +35,23 @@ namespace Demo.LiveTiles
         /// <param name="args">Details about the launch request and process.</param>
         protected override async void OnLaunched(LaunchActivatedEventArgs args)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
+            var rootFrame = new Frame();
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
-            
-            if (rootFrame == null)
-            {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame();
-                //Associate the frame with a SuspensionManager key                                
-                SuspensionManager.RegisterFrame(rootFrame, "AppFrame");
 
-                if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
+            if (!string.IsNullOrEmpty(args.Arguments))
+            {
+                var cleanArgs = args.Arguments.Replace("SecondaryTilePage=", "");
+                var tempArgs = cleanArgs.Split('|');
+
+                if (!rootFrame.Navigate(typeof(SecondaryTilesPage), tempArgs))
                 {
-                    // Restore the saved session state only when appropriate
-                    try
-                    {
-                        await SuspensionManager.RestoreAsync();
-                    }
-                    catch (SuspensionManagerException)
-                    {
-                        //Something went wrong restoring state.
-                        //Assume there is no state and continue
-                    }
+                    throw new Exception("Failed to create initial page");
                 }
 
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
             }
+           
             if (rootFrame.Content == null)
             {
                 // When the navigation stack isn't restored navigate to the first page,
@@ -74,6 +63,7 @@ namespace Demo.LiveTiles
                 }
             }
             // Ensure the current window is active
+            Window.Current.Content = rootFrame;
             Window.Current.Activate();
         }
 
