@@ -15,6 +15,7 @@ namespace Demo.LiveTiles.DataModel
         Unknown,
         Simple,
         WithParameters,
-        Unpin
+        Unpin,
+        LiveSecondaryTile
     }
 }

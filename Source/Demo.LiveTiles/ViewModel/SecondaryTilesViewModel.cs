@@ -25,6 +25,8 @@ namespace Demo.LiveTiles.ViewModel
                                                                                      ImagePath = @"../Images/LiveTileBackground.png"},
                                                                                  new SecondaryTileOption{Name = "With Parameters", SecondaryTileType = SecondaryTileType.WithParameters,
                                                                                      ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                     new SecondaryTileOption{Name = "Secondary Live Tile", SecondaryTileType = SecondaryTileType.LiveSecondaryTile,
+                                                                                     ImagePath = @"../Images/LiveTileBackground.png"},  
                                                                              });
 
         }
@@ -57,6 +59,10 @@ namespace Demo.LiveTiles.ViewModel
         {
             switch (SelectedSecondaryTileOption.SecondaryTileType)
             {
+                case SecondaryTileType.LiveSecondaryTile:
+                    PinLiveTile();
+                    break;
+
                 case SecondaryTileType.Simple:
                     PinSimpleTile();
                     break;
@@ -104,8 +110,30 @@ namespace Demo.LiveTiles.ViewModel
             {
                 return string.Format(TileIdPattern, "Simple", "Simple");
             }
+            
+            if (secondaryTileType == SecondaryTileType.WithParameters)
+            {
+                return string.Format(TileIdPattern, "Complex", "WithParameters");    
+            }
 
-            return string.Format(TileIdPattern, "Complex", "WithParameters");
+            return string.Format(TileIdPattern, "Live", "NoParms");
+        }
+
+
+        private async void PinLiveTile()
+        {
+            var tileId = BuildPinId(SecondaryTileType.LiveSecondaryTile);
+
+            if (_pinManager.IsPinned(tileId))
+            {
+                await _pinManager.UnPin(tileId);
+            }
+
+            var args = "SecondaryTilePage=Arg1|Arg2";
+
+            await _pinManager.Pin("Live Secondary", "Parameters Desc", tileId, args, "Images/Cars/Bugatti_Veyron_150.png", "Assets/SmalLogo.png");
+
+            _pinManager.UpdateSecondaryTile(tileId);
         }
 
         private async void PinTileWithParameters()
