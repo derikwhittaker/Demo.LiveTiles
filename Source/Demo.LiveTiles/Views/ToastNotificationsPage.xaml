@@ -11,7 +11,22 @@
     mc:Ignorable="d">
 
     <Page.Resources>
+        <DataTemplate x:Key="NotificationsTiles250x250ItemTemplate">
+            <Grid HorizontalAlignment="Left" Width="250" Height="500">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="{Binding ImagePath}" Stretch="Uniform"  AutomationProperties.Name="{Binding Title}"/>
 
+                <Grid Grid.Row="1" Margin="0,10,0,0">
+                    <Rectangle Grid.Row="1" Height="50" Fill="Black" Opacity=".5" />
+                    <TextBlock Grid.Row="1" Text="{Binding Name}" VerticalAlignment="Center" Foreground="White" Style="{StaticResource TitleTextStyle}" Margin="15,10"/>
+                </Grid>
+
+
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <!--
@@ -35,34 +50,19 @@
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Learn about Toast Notifications" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
 
-        <VisualStateManager.VisualStateGroups>
-
-            <!-- Visual states reflect the application's view state -->
-            <VisualStateGroup x:Name="ApplicationViewStates">
-                <VisualState x:Name="FullScreenLandscape"/>
-                <VisualState x:Name="Filled"/>
-
-                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
-                <VisualState x:Name="FullScreenPortrait">
-                    <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PortraitBackButtonStyle}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
-                </VisualState>
-
-                <!-- The back button and title have different styles when snapped -->
-                <VisualState x:Name="Snapped">
-                    <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedBackButtonStyle}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+        <GridView
+                x:Name="itemGridView"
+                AutomationProperties.AutomationId="ItemsGridView"
+                AutomationProperties.Name="Items"
+                TabIndex="1"
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                ItemsSource="{Binding ToastNotificationOptions}"
+                SelectedItem="{Binding SelectedToastNotifictioneOption, Mode=TwoWay}"
+                ItemTemplate="{StaticResource NotificationsTiles250x250ItemTemplate}"
+                SelectionMode="Single"
+                IsSwipeEnabled="false"
+            />
     </Grid>
 </common:LayoutAwarePage>

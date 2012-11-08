@@ -107,10 +107,12 @@
     <Compile Include="DataModel\LiveTileOption.cs" />
     <Compile Include="DataModel\SecondaryTileOption.cs" />
     <Compile Include="DataModel\TileNotificationOption.cs" />
+    <Compile Include="DataModel\ToastNotificationOption.cs" />
     <Compile Include="Managers\PinManager.cs" />
     <Compile Include="ViewModel\LiveTilesViewModel.cs" />
     <Compile Include="ViewModel\SecondaryTilesViewModel.cs" />
     <Compile Include="ViewModel\TileNotificationsViewModel.cs" />
+    <Compile Include="ViewModel\ToastNotificationsViewModel.cs" />
     <Compile Include="Views\DashbaordPage.xaml.cs">
       <DependentUpon>DashbaordPage.xaml</DependentUpon>
     </Compile>
@@ -173,6 +175,7 @@
     <Content Include="Images\Cars\McLaren_MP4.png" />
     <Content Include="Images\Cars\Porsche_Panamera.png" />
     <Content Include="Images\GreenSmallSquare.png" />
+    <Content Include="Images\GreenToastSquare.png" />
     <Content Include="Images\LiveTileBackground.png" />
     <Content Include="Images\RedSmallSquare.png" />
     <Content Include="Images\Tiles\TileSquareBlock.png" />

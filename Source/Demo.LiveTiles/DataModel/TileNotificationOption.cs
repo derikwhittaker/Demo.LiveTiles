@@ -18,4 +18,5 @@ namespace Demo.LiveTiles.DataModel
         ClearFutureQueue,
         QueryNotificationTiles
     }
+
 }
