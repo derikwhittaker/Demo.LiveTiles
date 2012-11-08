@@ -13,8 +13,9 @@ namespace Demo.LiveTiles.DataModel
     public enum TileNotificationType
     {
         Unknown,
-        QueueSingleFuture,
+        QueueSingleFuture,        
         QueueManyFuture,
+        QueueTileToExpire,
         ClearFutureQueue,
         ClearSingleQueue
     }
