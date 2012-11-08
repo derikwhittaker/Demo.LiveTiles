@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using Demo.LiveTiles.DataModel;
 using GalaSoft.MvvmLight;
 using NotificationsExtensions.TileContent;
@@ -24,8 +25,8 @@ namespace Demo.LiveTiles.ViewModel
                                                                                                    new TileNotificationOption{Name = "Queue To Expire", 
                                                                                                    TileNotificationType = TileNotificationType.QueueTileToExpire,
                                                                                                    ImagePath = @"../Images/LiveTileBackground.png"},
-                                                                                               new TileNotificationOption{Name = "Clear Single ", 
-                                                                                                   TileNotificationType = TileNotificationType.ClearSingleQueue,
+                                                                                               new TileNotificationOption{Name = "Query Notifications ", 
+                                                                                                   TileNotificationType = TileNotificationType.QueryNotificationTiles,
                                                                                                    ImagePath = @"../Images/LiveTileBackground.png"},
                                                                                                new TileNotificationOption{Name = "Clear All Future", 
                                                                                                    TileNotificationType = TileNotificationType.ClearFutureQueue,
@@ -68,10 +69,12 @@ namespace Demo.LiveTiles.ViewModel
                     QueueExpiringNotification();
                 break;
 
-                case TileNotificationType.ClearSingleQueue:
+                case TileNotificationType.QueryNotificationTiles:
+                    QueryNotificationTiles();
                 break;
 
                 case TileNotificationType.ClearFutureQueue:
+                    ClearFutureQueue();
                 break;
             }
         }
@@ -85,10 +88,10 @@ namespace Demo.LiveTiles.ViewModel
             tileUpdater.Clear();
 
             applicationTile.TextHeading.Text = "Future Top Scores";
-            applicationTile.TextBody1.Text = "Future Player 1 - 100";
-            applicationTile.TextBody2.Text = "Future Player 1 - 92";
-            applicationTile.TextBody3.Text = "Future Player 1 - 90";
-            applicationTile.TextBody4.Text = "Future Player 1 - 85";
+            applicationTile.TextBody1.Text = string.Format("Future Player - {0}", DateTime.Now.Ticks);
+            applicationTile.TextBody2.Text = string.Format("Future Player - {0}", DateTime.Now.Ticks);
+            applicationTile.TextBody3.Text = string.Format("Future Player - {0}", DateTime.Now.Ticks);
+            applicationTile.TextBody4.Text = string.Format("Future Player - {0}", DateTime.Now.Ticks);
 
             applicationTile.RequireSquareContent = false;
             applicationTile.Image.Src = @"../Images/Tiles/TileWideImageCollection.png";
@@ -116,6 +119,30 @@ namespace Demo.LiveTiles.ViewModel
             futureTile.ExpirationTime = DateTime.Now.AddSeconds(15);
 
             tileUpdater.AddToSchedule(futureTile);
+        }
+        
+        private void QueryNotificationTiles()
+        {
+            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
+
+            var scheduledNotifications = tileUpdater.GetScheduledTileNotifications();
+
+            foreach (var tile in scheduledNotifications)
+            {
+                Debug.WriteLine(string.Format("Tile Id {0} Delivery Time {1} Expiration Time: {2} ", tile.Id, tile.DeliveryTime, tile.ExpirationTime));
+            }
+        }
+
+        private void ClearFutureQueue()
+        {
+            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
+
+            var scheduledNotifications = tileUpdater.GetScheduledTileNotifications();
+
+            foreach (var tile in scheduledNotifications)
+            {
+                tileUpdater.RemoveFromSchedule(tile);
+            }
         }
     }
 }

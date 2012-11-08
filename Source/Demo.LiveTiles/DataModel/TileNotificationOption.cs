@@ -14,9 +14,8 @@ namespace Demo.LiveTiles.DataModel
     {
         Unknown,
         QueueSingleFuture,        
-        QueueManyFuture,
         QueueTileToExpire,
         ClearFutureQueue,
-        ClearSingleQueue
+        QueryNotificationTiles
     }
 }
