@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Demo.LiveTiles.App">
-      <VisualElements DisplayName="Demo.LiveTiles" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Demo.LiveTiles" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
-        <DefaultTile ShowName="allLogos" WideLogo="ApplictionWideTile_310x150.png" />
+      <VisualElements DisplayName="Demo.LiveTiles" Logo="Windows8LiveTile_SquareTile.png" SmallLogo="Assets\SmallLogo.png" Description="Demo.LiveTiles" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
+        <DefaultTile ShowName="allLogos" WideLogo="Windows8LiveTile_WideTile.png" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>
     </Application>
