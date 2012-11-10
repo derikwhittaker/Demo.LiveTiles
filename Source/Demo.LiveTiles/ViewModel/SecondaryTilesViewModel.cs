@@ -120,48 +120,19 @@ namespace Demo.LiveTiles.ViewModel
         }
 
 
-        private async void PinLiveTile()
+        private async void PinSimpleTile()
         {
-            var tileId = BuildPinId(SecondaryTileType.LiveSecondaryTile);
 
-            if (_pinManager.IsPinned(tileId))
-            {
-                await _pinManager.UnPin(tileId);
-            }
-
-            var args = "SecondaryTilePage=Arg1|Arg2";
-
-            await _pinManager.Pin("Live Secondary", "Parameters Desc", tileId, args, "Images/Cars/Bugatti_Veyron_150.png", "Assets/SmalLogo.png");
-
-            _pinManager.UpdateSecondaryTile(tileId);
         }
 
         private async void PinTileWithParameters()
         {
-            var tileId = BuildPinId(SecondaryTileType.WithParameters);
 
-            if (_pinManager.IsPinned(tileId))
-            {
-                await _pinManager.UnPin(tileId);
-            }
-
-            var args = "SecondaryTilePage=Arg1|Arg2";
-            
-            await _pinManager.Pin("W/ Parameters", "Parameters Desc", tileId, args, "Images/Cars/Bugatti_Veyron_150.png", "Assets/SmalLogo.png");
         }
 
-        private async void PinSimpleTile()
+        private async void PinLiveTile()
         {
-            var tileId = BuildPinId(SecondaryTileType.Simple);
-            
-            if (_pinManager.IsPinned(tileId))
-            {
-                await _pinManager.UnPin(tileId);
-            }
 
-            // NOTE - have this w/ NO args and show what happens
-
-            await _pinManager.Pin("Simple", "Simple Desc", tileId, "none", "Images/Cars/Bugatti_Veyron_150.png", "Assets/SmalLogo.png");
         }
 
         public void SetPinArguents(string[] arguments)

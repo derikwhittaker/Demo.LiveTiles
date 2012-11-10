@@ -110,143 +110,41 @@ namespace Demo.LiveTiles.ViewModel
 
         private void CreateSquareTextTile()
         {
-            var applicationTile = TileContentFactory.CreateTileSquareText01();
-            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
-
-            tileUpdater.Clear();
-
-            applicationTile.TextHeading.Text = "Heading Goes Here";
-            applicationTile.TextBody1.Text = "Line 1";
-            applicationTile.TextBody2.Text = "Line 2";
-            applicationTile.TextBody3.Text = "Line 3";
             
-            var tileNotification = applicationTile.CreateNotification();
-            tileUpdater.Update(tileNotification);
         }
 
         private void CreateSquareBlockTile()
         {
-            var applicationTile = TileContentFactory.CreateTileSquareBlock();
-            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
-
-            tileUpdater.Clear();
-
-            applicationTile.TextBlock.Text = "24";
-            applicationTile.TextSubBlock.Text = "Line 1";
-
-            var tileNotification = applicationTile.CreateNotification();
-            tileUpdater.Update(tileNotification);
+       
         }
 
         private void CreateSquareImageTile()
         {
-            var applicationTile = TileContentFactory.CreateTileSquareImage();
-            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
-
-            tileUpdater.Clear();
-
-            applicationTile.Image.Src = @"../Images/Cars/Bugatti_Veyron_150.png";
-
-            var tileNotification = applicationTile.CreateNotification();
-            tileUpdater.Update(tileNotification);
+ 
         }
 
         private void CreateSquareImagePeekTile()
         {
-            var applicationTile = TileContentFactory.CreateTileSquarePeekImageAndText01();
-            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
-
-            tileUpdater.Clear();
-
-            applicationTile.Image.Src = @"../Images/Cars/Bugatti_Veyron_150.png";
-            applicationTile.TextHeading.Text = "Heading";
-            applicationTile.TextBody1.Text = "Line 1";
-            applicationTile.TextBody2.Text = "Line 2";
-            applicationTile.TextBody3.Text = "Line 3";
-
-            var tileNotification = applicationTile.CreateNotification();
-            tileUpdater.Update(tileNotification);
+        
         }
 
         private void CreateWideTile()
         {
-            var applicationTile = TileContentFactory.CreateTileSquareText01();
-            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
 
-            tileUpdater.Clear();
-
-            applicationTile.TextHeading.Text = "Heading";
-            applicationTile.TextBody1.Text = "Line 1";
-            applicationTile.TextBody2.Text = "Line 2";
-            applicationTile.TextBody3.Text = "Line 3";
-
-            var tileNotification = applicationTile.CreateNotification();
-            tileUpdater.Update(tileNotification);
         }
 
         private void CreateWideImageAndTextTile()
         {
-            var applicationTile = TileContentFactory.CreateTileWideImageAndText02();
-            var smallTile = TileContentFactory.CreateTileSquareImage();
-            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
-
-            tileUpdater.Clear();
-
-            applicationTile.Image.Src = @"../Images/Cars/BAstonMartin_V12Zagato_310x150.png";
-            applicationTile.TextCaption1.Text = "Line 1";
-            applicationTile.TextCaption2.Text = "Line 2";
-
-            smallTile.Image.Src = @"../Images/Cars/Bugatti_Veyron_150.png";
-
-            applicationTile.SquareContent = smallTile;
-
-            var tileNotification = applicationTile.CreateNotification();
-            tileUpdater.Update(tileNotification);
+     
         }
 
         private void CreateWideImageCollectionTile()
         {
-            var applicationTile = TileContentFactory.CreateTileWideImageCollection();
-            var smallTile = TileContentFactory.CreateTileSquareImage();
-            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
 
-            tileUpdater.Clear();
-
-            applicationTile.ImageMain.Src = @"../Images/Cars/Bugatti_Veyron_150.png";
-            applicationTile.ImageSmallColumn1Row1.Src = @"../Images/BlueSmallSquare.png";
-            applicationTile.ImageSmallColumn1Row2.Src = @"../Images/BrownSmallSquare.png";
-            applicationTile.ImageSmallColumn2Row1.Src = @"../Images/GreenSmallSquare.png";
-            applicationTile.ImageSmallColumn2Row2.Src = @"../Images/RedSmallSquare.png"; 
-
-            smallTile.Image.Src = @"../Images/Cars/Bugatti_Veyron_150.png";
-
-            applicationTile.SquareContent = smallTile;
-
-            var tileNotification = applicationTile.CreateNotification();
-            tileUpdater.Update(tileNotification);
         }
 
         private void CreateWideTextTile()
         {
-            var applicationTile = TileContentFactory.CreateTileWideText02();
-            var smallTile = TileContentFactory.CreateTileSquareText01();
-            var tileUpdater = TileUpdateManager.CreateTileUpdaterForApplication(CoreApplication.Id);
-
-            tileUpdater.Clear();
-
-            applicationTile.TextColumn1Row1.Text = "C1 R1";
-            applicationTile.TextColumn1Row2.Text = "C1 R2";
-            applicationTile.TextColumn1Row3.Text = "C1 R3";
-            applicationTile.TextColumn2Row1.Text = "C2 R1";
-            applicationTile.TextColumn2Row2.Text = "C2 R2";
-            applicationTile.TextColumn2Row3.Text = "C2 R3";
-
-            smallTile.TextHeading.Text = "Heading";
-
-            applicationTile.SquareContent = smallTile;
-
-            var tileNotification = applicationTile.CreateNotification();
-            tileUpdater.Update(tileNotification);
         }
     }
 }

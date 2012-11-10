@@ -85,64 +85,23 @@ namespace Demo.LiveTiles.ViewModel
 
         private async void IsToastFeatureEnabled()
         {
-            var notifier = ToastNotificationManager.CreateToastNotifier();
 
-            // Make sure notifications are enabled
-            if (notifier.Setting != NotificationSetting.Enabled)
-            {
-                var dialog = new MessageDialog("Notifications are currently disabled");
-                await dialog.ShowAsync();
-            }
-            else
-            {
-                var dialog = new MessageDialog("Notifications are currently enabled");
-                await dialog.ShowAsync();
-            }
         }
 
         private void SendTextToast()
         {
             
-            var notifier = ToastNotificationManager.CreateToastNotifier();
-            var template = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText02);
-            
-            var element = template.GetElementsByTagName("text")[0];
-            element.AppendChild(template.CreateTextNode("Line 1 goes here"));
-
-            var toast = new ToastNotification(template);
-            notifier.Show(toast);
-
         }
 
         private void SendFutureToast()
         {
 
-            var notifier = ToastNotificationManager.CreateToastNotifier();
-            var template = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText02);
-
-            var element = template.GetElementsByTagName("text")[0];
-            element.AppendChild(template.CreateTextNode("I am from the future"));
-
-            // Schedule the toast to appear 10 seconds from now
-            var date = DateTimeOffset.Now.AddSeconds(10);
-            var scheduledToast = new ScheduledToastNotification(template, date);
-            notifier.AddToSchedule(scheduledToast);
         }
 
 
         private void SendImageToast()
         {
-            var notifier = ToastNotificationManager.CreateToastNotifier();
-            var template = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
-
-            var element = template.GetElementsByTagName("text")[0];
-            element.AppendChild(template.CreateTextNode("Image Line Goes Here"));
-
-            var images = template.GetElementsByTagName("image");
-            ((XmlElement)images[0]).SetAttribute("src", "Images/GreenToastSquare.png");
-            
-            var toast = new ToastNotification(template);
-            notifier.Show(toast);
+   
         }
 
     }

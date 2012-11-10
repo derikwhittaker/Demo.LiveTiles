@@ -40,17 +40,18 @@ namespace Demo.LiveTiles
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
 
-            if (!string.IsNullOrEmpty(args.Arguments))
-            {
-                var cleanArgs = args.Arguments.Replace("SecondaryTilePage=", "");
-                var tempArgs = cleanArgs.Split('|');
+            // Handles the live tile code
+            //if (!string.IsNullOrEmpty(args.Arguments))
+            //{
+            //    var cleanArgs = args.Arguments.Replace("SecondaryTilePage=", "");
+            //    var tempArgs = cleanArgs.Split('|');
 
-                if (!rootFrame.Navigate(typeof(SecondaryTilesPage), tempArgs))
-                {
-                    throw new Exception("Failed to create initial page");
-                }
+            //    if (!rootFrame.Navigate(typeof(SecondaryTilesPage), tempArgs))
+            //    {
+            //        throw new Exception("Failed to create initial page");
+            //    }
 
-            }
+            //}
            
             if (rootFrame.Content == null)
             {
