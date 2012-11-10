@@ -178,6 +178,8 @@
     <Content Include="Images\GreenToastSquare.png" />
     <Content Include="Images\LiveTileBackground.png" />
     <Content Include="Images\RedSmallSquare.png" />
+    <Content Include="Images\SecondaryTileBackground.png" />
+    <Content Include="Images\TileNotificationsBackground.png" />
     <Content Include="Images\Tiles\TileSquareBlock.png" />
     <Content Include="Images\Tiles\TileSquareImageOnly.png" />
     <Content Include="Images\Tiles\TileSquareImagePeek.png" />

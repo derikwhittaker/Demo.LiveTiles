@@ -23,9 +23,9 @@ namespace Demo.LiveTiles.ViewModel
                                                                                  new DashboardOption{Name = "Live Tiles", Description = "Learn how to setup your application for Live Tile", 
                                                                                      ImagePath = @"../Images/LiveTileBackground.png", PageType=typeof(LiveTilesPage)},
                                                                                  new DashboardOption{Name = "Secondary Tiles", Description = "Learn how to setup/use Secondary Tiles",
-                                                                                     ImagePath = @"../Images/LiveTileBackground.png", PageType=typeof(SecondaryTilesPage)},
+                                                                                     ImagePath = @"../Images/SecondaryTileBackground.png", PageType=typeof(SecondaryTilesPage)},
                                                                                  new DashboardOption{Name = "Scheduled Notifications", Description = "Learn how to setup/use Scheduled Notifications",
-                                                                                     ImagePath = @"../Images/LiveTileBackground.png", PageType=typeof(TileNotificationsPage)},
+                                                                                     ImagePath = @"../Images/TileNotificationsBackground.png", PageType=typeof(TileNotificationsPage)},
                                                                                  new DashboardOption{Name = "Toast Notifications", Description = "Learn how to setup/user Toast Notifications",
                                                                                      ImagePath = @"../Images/LiveTileBackground.png", PageType=typeof(ToastNotificationsPage)},
                                                                              });
