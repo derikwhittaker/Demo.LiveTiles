@@ -188,6 +188,7 @@
     <Content Include="Images\Tiles\TileWideImageAndText.png" />
     <Content Include="Images\Tiles\TileWideImageCollection.png" />
     <Content Include="Images\Tiles\TileWideText01.png" />
+    <Content Include="Images\ToastNotificationBackground.png" />
     <Content Include="MVVMLight.Nuget.Readme.txt" />
     <Content Include="Windows8LiveTile_SquareTile.png" />
     <Content Include="Windows8LiveTile_WideTile.png" />

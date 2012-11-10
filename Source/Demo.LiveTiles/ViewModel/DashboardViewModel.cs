@@ -27,7 +27,7 @@ namespace Demo.LiveTiles.ViewModel
                                                                                  new DashboardOption{Name = "Scheduled Notifications", Description = "Learn how to setup/use Scheduled Notifications",
                                                                                      ImagePath = @"../Images/TileNotificationsBackground.png", PageType=typeof(TileNotificationsPage)},
                                                                                  new DashboardOption{Name = "Toast Notifications", Description = "Learn how to setup/user Toast Notifications",
-                                                                                     ImagePath = @"../Images/LiveTileBackground.png", PageType=typeof(ToastNotificationsPage)},
+                                                                                     ImagePath = @"../Images/ToastNotificationBackground.png", PageType=typeof(ToastNotificationsPage)},
                                                                              });
         }
 

@@ -15,23 +15,15 @@
         <DataTemplate x:Key="Dashboard250x250ItemTemplate">
             <Grid HorizontalAlignment="Left" Width="250" Height="500">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <!--<Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Height="500">-->
-                        <Image Source="{Binding ImagePath}" Stretch="UniformToFill" Height="350" Width="225" AutomationProperties.Name="{Binding Title}"/>
-                        <TextBlock Text="{Binding Name}" VerticalAlignment="Top" Foreground="Black" Style="{StaticResource TitleTextStyle}" Height="60" Margin="15,15,15,0"/>
-                        <!--<StackPanel Orientation="Vertical">
-                            
-                            
-                        </StackPanel>-->                        
-                    <!--</Border>-->
-
+                <TextBlock Text="{Binding Name}" VerticalAlignment="Top" Style="{StaticResource TitleTextStyle}" Foreground="White" Height="40" Margin="15,15,15,0"/>
+     
+                <Grid Grid.Row="1">
+                    <Image Source="{Binding ImagePath}" Stretch="UniformToFill" Height="350" Width="225" AutomationProperties.Name="{Binding Title}"/>                    
                 </Grid>
-                <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}" Height="100">                    
-                    <TextBlock Text="{Binding Description}" Foreground="{StaticResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap" Margin="15,0,15,10"/>
-                </StackPanel>
+
             </Grid>
         </DataTemplate>
 

@@ -21,16 +21,16 @@ namespace Demo.LiveTiles.ViewModel
                                                                                            {
                                                                                                new TileNotificationOption{Name = "Queue Single", 
                                                                                                    TileNotificationType = TileNotificationType.QueueSingleFuture,
-                                                                                                   ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                                   ImagePath = @"../Images/TileNotificationsBackground.png"},
                                                                                                    new TileNotificationOption{Name = "Queue To Expire", 
                                                                                                    TileNotificationType = TileNotificationType.QueueTileToExpire,
-                                                                                                   ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                                   ImagePath = @"../Images/TileNotificationsBackground.png"},
                                                                                                new TileNotificationOption{Name = "Query Notifications ", 
                                                                                                    TileNotificationType = TileNotificationType.QueryNotificationTiles,
-                                                                                                   ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                                   ImagePath = @"../Images/TileNotificationsBackground.png"},
                                                                                                new TileNotificationOption{Name = "Clear All Future", 
                                                                                                    TileNotificationType = TileNotificationType.ClearFutureQueue,
-                                                                                                   ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                                   ImagePath = @"../Images/TileNotificationsBackground.png"},
                                                                                            });
         }
 

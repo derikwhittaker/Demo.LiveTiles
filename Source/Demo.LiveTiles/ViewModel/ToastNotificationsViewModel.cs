@@ -20,20 +20,20 @@ namespace Demo.LiveTiles.ViewModel
                                                                                            {
                                                                                                new ToastNotificationOption{Name = "Is Feature Enabled?", 
                                                                                                    ToastNotificationType = ToastNotificationType.IsFeatureEnabled,
-                                                                                                   ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                                   ImagePath = @"../Images/ToastNotificationBackground.png"},
 
                                                                                                 new ToastNotificationOption{Name = "Send Quick Toast", 
                                                                                                    ToastNotificationType = ToastNotificationType.SendTextToast,
-                                                                                                   ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                                   ImagePath = @"../Images/ToastNotificationBackground.png"},
 
                                                                                                 new ToastNotificationOption{Name = "Send Future Toast", 
                                                                                                    ToastNotificationType = ToastNotificationType.SendFutureToast,
-                                                                                                   ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                                   ImagePath = @"../Images/ToastNotificationBackground.png"},
 
                                                                                                    
                                                                                                 new ToastNotificationOption{Name = "Send Image Toast", 
                                                                                                    ToastNotificationType = ToastNotificationType.SendImageToast,
-                                                                                                   ImagePath = @"../Images/LiveTileBackground.png"},
+                                                                                                   ImagePath = @"../Images/ToastNotificationBackground.png"},
                                                                                            });
         }
 
